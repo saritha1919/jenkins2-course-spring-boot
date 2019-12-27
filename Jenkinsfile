@@ -6,8 +6,8 @@ pipeline {
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/saritha1919/jenkins2-course-spring-boot.git']]])
       }
     }
-	  def project_path="spring-boot-samples/spring-boot-sample-atmosphere"
-	  dir(project_path){
+	  //def project_path="spring-boot-samples/spring-boot-sample-atmosphere"
+	  dir("${env.WORKSPACE}/spring-boot-samples/spring-boot-sample-atmosphere"){
     stage('Compile') { 
       tools {
         // Specify Tool Name from your global tool configuration
