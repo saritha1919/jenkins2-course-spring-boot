@@ -13,7 +13,7 @@ pipeline {
         maven 'Maven'
       }
       steps {
-              sh 'mvn clean package'
+              powershell 'mvn clean package'
       }
     }
   }
