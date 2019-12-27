@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Source') { 
       steps {
-			// Some Step
+	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/saritha1919/jenkins2-course-spring-boot.git']]])
       }
     }
     stage('Compile') { 
@@ -13,7 +13,7 @@ pipeline {
         maven 'Maven'
       }
       steps {
-			// Some Step
+              sh 'mvn clean package'
       }
     }
   }
